@@ -1,4 +1,4 @@
-package dev.hinrichs.berlinfestivals.ui.theme
+package dev.hinrichs.berlinfestivals.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

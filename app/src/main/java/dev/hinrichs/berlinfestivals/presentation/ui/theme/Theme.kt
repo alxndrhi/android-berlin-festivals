@@ -1,4 +1,4 @@
-package dev.hinrichs.berlinfestivals.ui.theme
+package dev.hinrichs.berlinfestivals.presentation.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
@@ -14,7 +14,7 @@ private val DarkColorPalette = darkColors(
 
 private val LightColorPalette = lightColors(
     primary = Purple500,
-    primaryVariant = Purple700,
+    primaryVariant = Purple200,
     secondary = Teal200
 
     /* Other default colors to override
