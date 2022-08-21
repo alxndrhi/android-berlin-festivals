@@ -43,6 +43,12 @@ class MainActivity : ComponentActivity() {
                                 .fillMaxSize()
                                 .padding(20.dp)
                         ) {
+                            Text(
+                                text = "Berliner Straßenfeste",
+                                modifier = Modifier
+                                    .fillMaxWidth(),
+                                style = MaterialTheme.typography.h4,
+                            )
                             FestivalList(state = viewModel.state)
                         }
                         viewModel.state.error?.let { error ->
