@@ -72,7 +72,7 @@ class MainActivity : ComponentActivity() {
         window?.statusBarColor = MaterialTheme
             .colors
             .background
-            .darker(.8f)
+            .darker(.2f)
             .toArgb()
     }
 }

@@ -9,7 +9,8 @@ val Purple700 = Color(0xFF3700B3)
 val Teal200 = Color(0xFF03DAC5)
 
 
-fun Color.darker(factor: Float): Color {
+fun Color.darker(f: Float): Color {
+    val factor = 1 - f
     return Color(
         red = max(this.red.times(factor), 0f),
         green = max(this.green.times(factor), 0f),
