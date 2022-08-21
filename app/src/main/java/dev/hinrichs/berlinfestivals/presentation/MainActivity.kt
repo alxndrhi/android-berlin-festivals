@@ -4,20 +4,20 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import dagger.hilt.android.AndroidEntryPoint
 import dev.hinrichs.berlinfestivals.presentation.ui.theme.BerlinFestivalsTheme
+import dev.hinrichs.berlinfestivals.presentation.ui.theme.darker
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -31,9 +31,11 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             BerlinFestivalsTheme {
+                setStatusBarColor()
+
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
+                    color = MaterialTheme.colors.background,
                 ) {
                     Box(
                         modifier = Modifier.fillMaxSize()
@@ -63,5 +65,14 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+
+    @Composable
+    private fun setStatusBarColor() {
+        window?.statusBarColor = MaterialTheme
+            .colors
+            .background
+            .darker(.8f)
+            .toArgb()
     }
 }
