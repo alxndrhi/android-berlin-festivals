@@ -10,7 +10,6 @@ import dev.hinrichs.berlinfestivals.domain.repository.FestivalRepository
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-
 @HiltViewModel
 class FestivalViewModel @Inject constructor(
     private val repository: FestivalRepository,
@@ -18,6 +17,10 @@ class FestivalViewModel @Inject constructor(
 
     var state by mutableStateOf(FestivalState())
         private set
+
+    init {
+        this.loadFestivals()
+    }
 
     fun loadFestivals() {
         viewModelScope.launch {

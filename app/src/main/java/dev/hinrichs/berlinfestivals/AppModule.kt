@@ -40,5 +40,4 @@ object AppModule {
         @FromJson
         fun fromJson(date: String): LocalDate = LocalDate.parse(date)
     }
-
 }

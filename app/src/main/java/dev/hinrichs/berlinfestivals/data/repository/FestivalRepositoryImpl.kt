@@ -7,7 +7,6 @@ import dev.hinrichs.berlinfestivals.domain.repository.FestivalRepository
 import java.time.LocalDate
 import javax.inject.Inject
 
-
 class FestivalRepositoryImpl @Inject constructor(
     private val client: FestivalApi
 ) : FestivalRepository {
