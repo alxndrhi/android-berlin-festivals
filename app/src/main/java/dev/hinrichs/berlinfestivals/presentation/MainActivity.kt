@@ -21,14 +21,14 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             BerlinFestivalsTheme {
-                setStatusBarColor()
-                festivalView(viewModel = viewModel)
+                SetStatusBarColor()
+                FestivalView(viewModel = viewModel)
             }
         }
     }
 
     @Composable
-    private fun setStatusBarColor() {
+    private fun SetStatusBarColor() {
         window?.statusBarColor = MaterialTheme
             .colors
             .background

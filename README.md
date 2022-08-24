@@ -15,11 +15,15 @@ The data is used for this app is fetched from the open data portal of Berlin
   - [x] Basic project setup and structure "for a small project" (data, domain, presentation)
   - [x] fetching data from open data portal (retrofit, dto, domain model, view-model)
   - [x] display data in a simple list (don't care about styling right now)
-- __Step 1.5__
+- __Step 1.1__
   - [x] add linter (ktlint)
   - [x] bump versions
   - [x] add github action to build on push
-  - [x] ~~optional~~: find an app icon to use 
+  - [x] ~~optional~~: find an app icon to use
+- __Step 1.2__
+  - [x] improve mapper (correct image and website string)
+  - [x] load festival images if available in festival list
+  - [x] use english names in Dto and use json annotation for fields
 - __Step 2__ (theming / styling)
   - [ ] show up to 5 current and upcoming festivals styled with image, opening hours, event name in a row (like featured)
   - [ ] make festival clickable and show detail info's
@@ -38,10 +42,10 @@ The data is used for this app is fetched from the open data portal of Berlin
   - [ ] Festival compass: AR open camera and show information (for example festival name and distance) if you look in the direction of the festival
   - [ ] add comment functionality
 
-
 ## Sources
 - App layers: [Guide to app architecture](https://developer.android.com/topic/architecture)
 - Hilt: [Dependency Injection with Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
 - Retrofit: [Retrofit](https://square.github.io/retrofit/)
 - Moshi: [https://github.com/square/moshi](https://github.com/square/moshi)
 - Jetpack Compose: [Jetpack Compose Pathway](https://developer.android.com/courses/pathways/compose)
+- Coil Image Loading: [Coil Jatpack Compose](https://coil-kt.github.io/coil/compose/) 

@@ -14,8 +14,8 @@ class FestivalRepositoryImpl @Inject constructor(
         return try {
             client.fetchFestivals()
                 .festivals
-                .filter { it.von.isAfter(LocalDate.now()) || it.bis.isAfter(LocalDate.now()) }
-                .sortedBy { it.von }
+                .filter { it.startDate.isAfter(LocalDate.now()) || it.endDate.isAfter(LocalDate.now()) }
+                .sortedBy { it.startDate }
                 .map { it.toDomain() }
         } catch (e: Exception) {
             e.printStackTrace()

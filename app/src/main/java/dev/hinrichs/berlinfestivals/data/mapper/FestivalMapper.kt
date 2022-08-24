@@ -6,20 +6,36 @@ import dev.hinrichs.berlinfestivals.domain.festival.FestivalContact
 
 fun FestivalDto.toDomain() = Festival(
     id = this.id.toInt(),
-    image = this.bild,
+    imageUrl = buildImageUrl(this.imagePath),
     copyright = this.copyright,
-    description = this.bezeichnung,
-    district = this.bezirk,
-    street = this.strasse,
-    zipCode = this.plz,
-    start = this.von,
-    end = this.bis,
-    opens = this.zeit,
+    description = this.description,
+    district = this.district,
+    street = this.street,
+    zipCode = this.zip,
+    startDate = this.startDate,
+    endDate = this.endDate,
+    openingHours = this.openingHours,
     contact = FestivalContact(
-        organizer = this.veranstalter,
-        email = this.mail,
-        www = this.www,
+        organizer = this.organizer,
+        email = this.email,
+        website = naiveUrlPatcher(this.website),
     ),
-    info = this.bemerkungen,
+    info = this.info,
     rssTitel = this.rssTitel,
 )
+
+private fun buildImageUrl(imagePath: String): String {
+    return if (imagePath.isNotEmpty()) {
+        "https://www.berlin.de$imagePath"
+    } else { "" }
+}
+
+/**
+ * Will naively add https to given strings, that miss the protocol at the beginning.
+ * It will not check if the url is actually https or only http nor if the given string actually is an url.
+ */
+private fun naiveUrlPatcher(website: String): String {
+    return if (website.isNotEmpty() && !website.startsWith("http")) {
+        "https://$website"
+    } else { website }
+}
