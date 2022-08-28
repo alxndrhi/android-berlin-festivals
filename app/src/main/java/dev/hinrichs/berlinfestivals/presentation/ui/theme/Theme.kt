@@ -21,7 +21,6 @@ private val LightColorPalette = lightColors(
     secondary = Teal200,
     background = Color.LightGray,
     surface = Color.DarkGray,
-
 )
 
 @Composable

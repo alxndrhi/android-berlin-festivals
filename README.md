@@ -25,10 +25,10 @@ The data is used for this app is fetched from the open data portal of Berlin
   - [x] load festival images if available in festival list
   - [x] use english names in Dto and use json annotation for fields
 - __Step 2__ (theming / styling)
-  - [ ] show up to 5 current and upcoming festivals styled with image, opening hours, event name in a row (like featured)
+  - [x] show up to 5 current and upcoming festivals styled with image and event name in a row (like featured)
+- __Step 3__ (testing)
   - [ ] make festival clickable and show detail info's
   - [ ] add interaction on detail view like: click on phone number to call
-- __Step 3__ (testing)
   - [ ] add tests to the project (UI, Unit, ...)
 - __Step 4__ (show events on map)
   - [ ] add a map that shows selected event on it
@@ -44,8 +44,8 @@ The data is used for this app is fetched from the open data portal of Berlin
 
 ## Sources
 - App layers: [Guide to app architecture](https://developer.android.com/topic/architecture)
-- Hilt: [Dependency Injection with Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
+- Dagger-Hilt: [Dependency Injection with Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
 - Retrofit: [Retrofit](https://square.github.io/retrofit/)
 - Moshi: [https://github.com/square/moshi](https://github.com/square/moshi)
 - Jetpack Compose: [Jetpack Compose Pathway](https://developer.android.com/courses/pathways/compose)
-- Coil Image Loading: [Coil Jatpack Compose](https://coil-kt.github.io/coil/compose/) 
+- Coil Image Loading: [Coil Jatpack Compose](https://coil-kt.github.io/coil/compose/)

@@ -35,6 +35,17 @@ fun FestivalView(viewModel: FestivalViewModel) {
                         .fillMaxWidth(),
                     style = MaterialTheme.typography.h1,
                 )
+                Text(
+                    text = "Featured",
+                    modifier = Modifier.fillMaxWidth().padding(top = 16.dp),
+                    style = MaterialTheme.typography.subtitle1
+                )
+                FestivalCards(viewModel.state)
+                Text(
+                    text = "Alle Strassenfeste ab heute:",
+                    modifier = Modifier.fillMaxWidth().padding(top = 16.dp),
+                    style = MaterialTheme.typography.subtitle1
+                )
                 FestivalList(state = viewModel.state)
             }
             viewModel.state.error?.let { error ->
