@@ -21,7 +21,7 @@ object AppModule {
     @Singleton
     fun providesFestivalApi(): FestivalApi {
         return Retrofit.Builder()
-            .baseUrl("https://www.berlin.de")
+            .baseUrl(BuildConfig.API_BASE_URL)
             .addConverterFactory(
                 MoshiConverterFactory.create(
                     Moshi.Builder()

@@ -1,5 +1,6 @@
 package dev.hinrichs.berlinfestivals.data.mapper
 
+import dev.hinrichs.berlinfestivals.BuildConfig
 import dev.hinrichs.berlinfestivals.data.remote.FestivalDto
 import dev.hinrichs.berlinfestivals.domain.festival.Festival
 import dev.hinrichs.berlinfestivals.domain.festival.FestivalContact
@@ -26,7 +27,7 @@ fun FestivalDto.toDomain() = Festival(
 
 private fun buildImageUrl(imagePath: String): String {
     return if (imagePath.isNotEmpty()) {
-        "https://www.berlin.de$imagePath"
+        "${BuildConfig.API_BASE_URL}/images/${imagePath.split('/').last()}"
     } else { "" }
 }
 

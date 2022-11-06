@@ -6,6 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dev.hinrichs.berlinfestivals.data.Resource
 import dev.hinrichs.berlinfestivals.domain.repository.FestivalRepository
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -28,18 +29,19 @@ class FestivalViewModel @Inject constructor(
                 isLoading = true,
                 error = null,
             )
-            state = try {
-                val result = repository.getFestivalData()
-                state.copy(
-                    festivals = result,
-                    isLoading = false,
-                    error = null,
-                )
-            } catch (e: Exception) {
-                state.copy(
-                    isLoading = false,
-                    error = "${e.message}"
-                )
+            state = when (val result = repository.getFestivalData()) {
+                is Resource.Success -> {
+                    state.copy(
+                        festivals = result.data,
+                        isLoading = false,
+                        error = null,
+                    )
+                }
+                is Resource.Error -> {
+                    state.copy(
+                        isLoading = false, error = result.message
+                    )
+                }
             }
         }
     }

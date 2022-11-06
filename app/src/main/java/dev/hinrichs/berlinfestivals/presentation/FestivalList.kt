@@ -1,5 +1,6 @@
 package dev.hinrichs.berlinfestivals.presentation
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -18,10 +19,13 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import dev.hinrichs.berlinfestivals.R
 import dev.hinrichs.berlinfestivals.domain.festival.Festival
-import dev.hinrichs.berlinfestivals.presentation.ui.theme.darker
 
 @Composable
 fun FestivalList(
@@ -29,12 +33,21 @@ fun FestivalList(
     modifier: Modifier = Modifier
 ) {
     if (!state.festivals.isNullOrEmpty()) {
-        LazyColumn(
-            modifier = modifier.padding(top = 16.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
-            items(state.festivals) { festival ->
-                FestivalListItem(festival)
+        Text(
+            text = "Alle Strassenfeste",
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 16.dp),
+            style = MaterialTheme.typography.subtitle1
+        )
+
+        Box(modifier = Modifier.padding(top = 10.dp)) {
+            LazyColumn(
+                verticalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                items(state.festivals) { festival ->
+                    FestivalListItem(festival)
+                }
             }
         }
     }
@@ -48,7 +61,11 @@ private fun FestivalListItem(
 
     Column(
         modifier = Modifier
-            .background(color = MaterialTheme.colors.background.darker(.1f))
+            .background(
+                color = Color.DarkGray.copy(
+                    alpha = 0.7f
+                )
+            )
             .padding(all = 5.dp)
     ) {
         Row(
@@ -62,6 +79,7 @@ private fun FestivalListItem(
                 contentAlignment = Alignment.CenterStart,
             ) {
                 Text(
+                    color = Color.White,
                     text = festival.rssTitel,
                     style = MaterialTheme.typography.h2,
                     modifier = Modifier.align(Alignment.CenterStart)
@@ -74,12 +92,14 @@ private fun FestivalListItem(
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             Text(
+                color = Color.White,
                 text = "${festival.startDate} - ${festival.endDate}",
                 style = MaterialTheme.typography.body1
             )
             Text(
+                color = Color.White,
                 text = "Webseite",
-                style = MaterialTheme.typography.button,
+                style = MaterialTheme.typography.body1,
                 modifier = Modifier
                     .clickable {
                         uriHandler.openUri(festival.contact.website)
