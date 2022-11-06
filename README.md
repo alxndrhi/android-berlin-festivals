@@ -36,7 +36,7 @@ The data is used for this app is fetched from the open data portal of Berlin
 - __Step 5__ (storage / caching)
   - [ ] sync festival info's on app start and store them local
   - [ ] add like or pin function so you can like/pin festivals
-- __more__ (unfiltered, not sorted, optional)
+- __more__ (unfiltered, not sorted)
   - [ ] add a share button, to send info about events to others
   - [ ] add notifications for upcoming festivals you pinned or liked
   - [ ] Festival compass: AR open camera and show information (for example festival name and distance) if you look in the direction of the festival
