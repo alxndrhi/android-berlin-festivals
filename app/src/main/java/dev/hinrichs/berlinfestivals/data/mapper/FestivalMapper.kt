@@ -1,6 +1,5 @@
 package dev.hinrichs.berlinfestivals.data.mapper
 
-import dev.hinrichs.berlinfestivals.BuildConfig
 import dev.hinrichs.berlinfestivals.data.remote.FestivalDto
 import dev.hinrichs.berlinfestivals.domain.festival.Festival
 import dev.hinrichs.berlinfestivals.domain.festival.FestivalContact
@@ -27,7 +26,7 @@ fun FestivalDto.toDomain() = Festival(
 
 private fun buildImageUrl(imagePath: String): String {
     return if (imagePath.isNotEmpty()) {
-        "${BuildConfig.API_BASE_URL}/images/${imagePath.split('/').last()}"
+        "https://bsfdemoinfrastack-bsf2022demobucket8f0601d7-cvq3v93snnnh.s3.eu-central-1.amazonaws.com/images/${imagePath.split('/').last()}"
     } else { "" }
 }
 
@@ -38,5 +37,7 @@ private fun buildImageUrl(imagePath: String): String {
 private fun naiveUrlPatcher(website: String): String {
     return if (website.isNotEmpty() && !website.startsWith("http")) {
         "https://$website"
-    } else { website }
+    } else {
+        website
+    }
 }

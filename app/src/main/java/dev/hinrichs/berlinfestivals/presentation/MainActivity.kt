@@ -9,7 +9,6 @@ import dev.hinrichs.berlinfestivals.presentation.ui.theme.BerlinFestivalsTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-
     private val viewModel: FestivalViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {

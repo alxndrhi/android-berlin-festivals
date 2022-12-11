@@ -25,7 +25,9 @@ import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalUnitApi::class)
 @Composable
-fun FestivalView(viewModel: FestivalViewModel) {
+fun FestivalView(
+    viewModel: FestivalViewModel,
+) {
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colors.background,
