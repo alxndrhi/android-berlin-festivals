@@ -26,7 +26,7 @@ fun FestivalDto.toDomain() = Festival(
 
 private fun buildImageUrl(imagePath: String): String {
     return if (imagePath.isNotEmpty()) {
-        "https://bsfdemoinfrastack-bsf2022demobucket8f0601d7-cvq3v93snnnh.s3.eu-central-1.amazonaws.com/images/${imagePath.split('/').last()}"
+        "https://www.berlin.de$imagePath"
     } else { "" }
 }
 

@@ -21,7 +21,7 @@ object AppModule {
     @Singleton
     fun providesFestivalApi(): FestivalApi {
         return Retrofit.Builder()
-            .baseUrl("https://bsfdemoinfrastack-bsf2022demobucket8f0601d7-cvq3v93snnnh.s3.eu-central-1.amazonaws.com/")
+            .baseUrl("https://www.berlin.de/sen/web/service/maerkte-feste/strassen-volksfeste/index.php/index/")
             .addConverterFactory(
                 MoshiConverterFactory.create(
                     Moshi.Builder()
